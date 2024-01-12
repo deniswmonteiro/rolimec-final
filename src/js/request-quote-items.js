@@ -46,8 +46,8 @@ export function addRequestQuoteItemsSlide(data) {
         .replaceAll(" ", "-");
     const productType = data.type.toLowerCase();
     const imgSrc = wrapper.classList.contains("rm-request-products-internal") ? 
-        `../../src/img/${productType}/${slideNameImage}-md.jpg` : 
-        `./src/img/${productType}/${slideNameImage}-md.jpg`;
+        `../../../src/img/${productType}/${slideNameImage}-md.jpg` : 
+        `../../src/img/${productType}/${slideNameImage}-md.jpg`;
 
     const cartItems = getLocalStorage("Rolimec");
 
