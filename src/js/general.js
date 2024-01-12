@@ -1,4 +1,4 @@
-import { initRequestQuoteItemsSlide, removeRequestQuoteItemsSlide } from "./request-quote-items.js";
+import { initRequestQuoteItemsSlide, removeRequestQuoteItemsSlide } from "../../src/js/request-quote-items.js";
 
 /** Get quantity of items to Request Quote from local storage */
 export function getRequestQuoteItemsQuantity() {
