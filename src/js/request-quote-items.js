@@ -47,7 +47,7 @@ export function addRequestQuoteItemsSlide(data) {
     const productType = data.type.toLowerCase();
     const imgSrc = wrapper.classList.contains("rm-request-products-internal") ? 
         `../src/img/${productType}/${slideNameImage}-md.jpg` : 
-        `../../src/img/${productType}/${slideNameImage}-md.jpg`;
+        `../src/img/${productType}/${slideNameImage}-md.jpg`;
 
         console.log(imgSrc)
 
