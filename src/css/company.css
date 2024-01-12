@@ -1,0 +1,116 @@
+#rm-company {
+    padding-top: 130px;
+    padding-bottom: 130px;
+    position: relative;
+    overflow: hidden;
+}
+
+#rm-company::after {
+    content: url("../../src/img/icons/circle-lg-icon.svg");
+    position: absolute;
+    bottom: 250px;
+    right: -290px;
+    z-index: -1;
+}
+
+#rm-company .rm-company-content p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--black);
+}
+
+#rm-company .rm-company-content p:not(:last-of-type) {
+    margin-bottom: 22px;
+}
+
+/** SLIDE */
+#rm-company .rm-slide-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#rm-company .rm-slide-article {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#rm-company .rm-slide-image {
+    position: relative;
+}
+
+#rm-company .rm-slide-img {
+    width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+    position: relative;
+    z-index: 5;
+    border-radius: 8px;
+}
+
+#rm-company .rm-swiper-1 {
+    height: 70%;
+    width: 100%;
+}
+
+#rm-company .rm-swiper-2 {
+    height: 23%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+#rm-company .rm-swiper-2 .rm-slide-article {
+    width: 20% !important;
+    height: 100%;
+}
+
+#rm-company .rm-swiper-2 .rm-slide-article.swiper-slide-thumb-active img {
+    border: 1px solid var(--gray-1);
+}
+
+@media (max-width: 1199px) {
+    #rm-company::after {
+        bottom: 220px;
+        right: -460px;
+    }
+
+    /** SLIDE */
+    #rm-company .rm-swiper-1 {
+        height: 51%;
+    }
+
+    #rm-company .rm-swiper-2 {
+        height: 22%;
+    }
+}
+
+@media (max-width: 991px) {
+    #rm-company {
+        padding-top: 80px;
+        padding-bottom: 0;
+    }
+
+    #rm-company::after {
+        content: url("../../src/img/icons/circle-sm-icon.svg");
+        top: -150px;
+        right: -150px;
+    }
+
+    #rm-company .rm-company-content p {
+        font-size: 14px;
+    }
+
+    #rm-company .rm-company-content p:not(:last-of-type) {
+        margin-bottom: 24px;
+    }
+
+    #rm-company .rm-company-content p:last-of-type {
+        margin-bottom: 50px;
+    }
+
+    /** SLIDE */
+    #rm-company .rm-swiper-2 {
+        height: 25%;
+    }
+}

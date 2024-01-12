@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84">
+    <g data-name="Grupo 8388" transform="translate(-3696 -199)">
+        <circle cx="41.5" cy="41.5" r="41.5" fill="#e6e6e6" data-name="Elipse 85" transform="translate(3696 199)"/>
+        <g data-name="Grupo 52" transform="translate(2882 -653)">
+            <circle cx="29.5" cy="29.5" r="29.5" fill="#0071b6" data-name="Elipse 90" transform="translate(825 864)"/>
+            <g data-name="Layer 1">
+                <g fill="#fff" data-name="Layer 2">
+                    <path d="M841.486 891.115a2.564 2.564 0 0 1 2.564 2.564v14.054a2.564 2.564 0 0 1-5.128 0v-14.054a2.564 2.564 0 0 1 2.564-2.564Z" data-name="Caminho 23"/>
+                    <path d="M850.241 875.203a2.564 2.564 0 0 1 2.564 2.564v29.966a2.564 2.564 0 1 1-5.128 0v-29.966a2.56 2.56 0 0 1 2.564-2.564Z" data-name="Caminho 24"/>
+                    <path d="M858.988 881.599a2.564 2.564 0 0 1 2.564 2.564v23.569a2.564 2.564 0 1 1-5.128 0v-23.569a2.564 2.564 0 0 1 2.564-2.564Z" data-name="Caminho 25"/>
+                    <path d="M867.743 896.997a2.564 2.564 0 0 1 2.564 2.564v8.172a2.564 2.564 0 1 1-5.128 0v-8.165a2.566 2.566 0 0 1 2.564-2.571Z" data-name="Caminho 26"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

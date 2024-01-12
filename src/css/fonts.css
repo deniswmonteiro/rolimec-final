@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Archivo Thin";
+    src: url("./fonts/Archivo-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Archivo Regular";
+    src: url("./fonts/Archivo-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Archivo Medium";
+    src: url("./fonts/Archivo-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Archivo SemiBold";
+    src: url("./fonts/Archivo-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Archivo Bold";
+    src: url("./fonts/Archivo-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Archivo ExtraBold";
+    src: url("./fonts/Archivo-ExtraBold.ttf") format("truetype");
+}

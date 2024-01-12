@@ -1,0 +1,106 @@
+#rm-home-introduction {
+    background: transparent url("../../src/img/home-introduction-bg.jpg") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    margin-top: 120px;
+    padding-top: 130px;
+    padding-bottom: 220px;
+}
+
+#rm-home-introduction .rm-card-highlight {
+    position: relative;
+    padding: 46px 66px;
+    border-radius: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: none;
+}
+
+#rm-home-introduction .rm-card-highlight .rm-title-1 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+#rm-home-introduction .rm-card-highlight .rm-title-1::before {
+    content: url("../../src/img/icons/home-introduction-divider-lg.svg");
+    display: block;
+    margin-bottom: 15px;
+}
+
+#rm-home-introduction .rm-card-highlight .rm-title-1 span {
+    color: var(--blue-1);
+}
+
+#rm-home-introduction .rm-card-highlight p {
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--white);
+}
+
+#rm-home-introduction .rm-card-highlight .rm-card-actions {
+    display: flex;
+    justify-content: center;
+}
+
+#rm-home-introduction .rm-card-highlight .rm-card-actions a {
+    position: absolute;
+    bottom: -25px;
+    font-size: 16px;
+    font-family: var(--font-bold);
+    font-weight: 700;
+}
+
+@media (max-width: 1399px) {
+    #rm-home-introduction .rm-card-highlight {
+        padding: 23px 38px 23px 38px;
+    }
+}
+
+@media (max-width: 991px) {
+    #rm-home-introduction {
+        margin-top: 90px;
+        padding-top: 140px;
+        padding-bottom: 100px;
+    }
+
+    #rm-home-introduction .rm-card-highlight {
+        width: 350px;
+        padding: 20px 35px 20px 35px;
+        margin: 0 auto;
+    }
+
+    #rm-home-introduction .rm-card-highlight .rm-title-1 {
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    #rm-home-introduction .rm-card-highlight .rm-title-1::before {
+        margin-bottom: 5px;
+    }
+
+    #rm-home-introduction .rm-card-highlight p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    #rm-home-introduction .rm-card-highlight .rm-card-actions a {
+        font-size: 12px;
+        bottom: -20px;
+    }
+}
+
+@media (max-width: 575px) {
+    #rm-home-introduction {
+        margin-top: 85px;
+    }
+
+    #rm-home-introduction .rm-card-highlight {
+        width: 286px;
+        padding: 20px;
+    }
+
+    #rm-home-introduction .rm-card-highlight .rm-title-1::before {
+        content: url("../../src/img/icons/home-introduction-divider-sm.svg");
+    }
+}

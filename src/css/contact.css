@@ -1,0 +1,118 @@
+#rm-contact {
+    padding-top: 80px;
+    padding-bottom: 130px;
+    margin-top: 120px;
+}
+
+#rm-contact .rm-contact-address-1 {
+    margin-bottom: 150px;
+}
+
+#rm-contact .rm-contact-content {
+    background-color: var(--gray-1);
+    padding: 50px;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+
+#rm-contact h2 {
+    color: var(--black);
+    position: absolute;
+}
+
+#rm-contact .rm-contact-content-local p {
+    font-size: 20px;
+    color: var(--black);
+    width: 420px;
+    margin-top: 60px;
+}
+
+#rm-contact .rm-contact-content-communication li,
+#rm-contact .rm-contact-content-communication a {
+    color: var(--black);
+}
+
+#rm-contact .rm-contact-content-communication li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#rm-contact .rm-contact-content-communication li:not(:last-of-type) {
+    margin-bottom: 8px;
+}
+
+#rm-contact .rm-contact-content-communication li:first-of-type {
+    font-family: var(--font-semibold);
+}
+
+#rm-contact .rm-contact-content-communication li img {
+    width: 20px;
+    height: 20px;
+}
+
+#rm-contact .rm-contact-form {
+    margin-top: 50px;
+}
+
+#rm-contact .rm-contact-map {
+    padding: 0;
+}
+
+#rm-contact .rm-contact-map img {
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+}
+
+@media (max-width: 991px) {
+    #rm-contact {
+        padding-top: 40px;
+        padding-bottom: 80px;
+        margin-top: 93px;
+    }
+
+    #rm-contact .rm-contact-address-1 {
+        margin-bottom: 60px;
+    }
+    
+    #rm-contact .rm-contact-content {
+        padding: 30px;
+    }
+
+    #rm-contact h2 {
+        margin-bottom: 15px;
+        position: initial;
+    }
+
+    #rm-contact .rm-contact-content-local {
+        order: 2;
+    }
+
+    #rm-contact .rm-contact-content-local p {
+        font-size: 14px;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    #rm-contact .rm-contact-content-communication {
+        margin-bottom: 30px;
+    }
+
+    #rm-contact .rm-contact-content-communication li,
+    #rm-contact .rm-contact-content-communication a {
+        font-size: 14px;
+    }
+
+    #rm-contact .rm-contact-content-communication li img {
+        width: 19px;
+        height: 19px;
+    }
+
+    #rm-contact .rm-contact-form {
+        margin-top: 30px;
+    }
+
+    #rm-contact .rm-form-actions button.rm-btn-primary {
+        padding: 8px 20px;
+    }
+}

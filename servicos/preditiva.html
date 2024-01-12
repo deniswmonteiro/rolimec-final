@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rolimec | Serviços | Preditiva</title>
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../src/css/plugins/bootstrap.min.css">
+        <link rel="stylesheet" href="../src/css/plugins/swiper-bundle.min.css">
+        <link rel="stylesheet" href="../src/css/style.css">
+    </head>
+    <body id="rm-app">
+        <!-- ALERT -->
+        <div class="alert alert-warning alert-dismissible fade rm-alert-cart" role="alert">
+            <span>Item adicionado ao orçamento.</span>
+            <button type="button" class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close">
+            </button>
+        </div>
+
+        <!-- HEADER -->
+        <header id="rm-header">
+            <nav class="container navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand rm-header-logo" href="/">
+                        <img src="../src/img/logo.svg" alt="Logo da Rolimec">
+                    </a>
+
+                    <div class="rm-header-menu-container">
+                        <button type="button" class="btn rm-btn-primary"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#rm-request-quote-content">
+                            Solicitar Orçamento
+                        </button>
+                        
+                        <button type="button"
+                            id="rm-button-mobile"
+                            aria-controls="rm-header-menu" 
+                            aria-expanded="false"
+                            aria-label="Toggle menu mobile"
+                            onclick="return event.preventDefault(), window.toggleMenuMobile(this)">
+                            <span id="rm-icon-hamburger"></span>
+                        </button>
+                    
+                        <ul class="navbar-nav mr-auto mb-2 mb-lg-0 rm-header-menu"
+                            id="rm-header-menu">
+                            <li class="nav-item">
+                                <a href="../a-empresa.html" class="nav-link">
+                                    A empresa
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Serviços
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <a class="dropdown-item active"
+                                                    href="preditiva.html">
+                                                    Preditiva
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="termografia.html">
+                                                    Termografia
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="alinhamento-a-laser-de-eixos-e-polias.html">
+                                                    Alinhamento a laser de eixos e polias
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="analise-de-vibracoes.html">
+                                                    Análise de vibrações
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="analise-de-oleo-lubrificante-e-isolante.html">
+                                                    Análise de óleo lubrificante e isolante
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="balanceamento-de-campo.html">
+                                                    Balanceamento de campo
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../produtos.html" class="nav-link">
+                                    Produtos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../parceiros.html" class="nav-link">
+                                    Parceiros
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../contato.html" class="nav-link">
+                                    Contato
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="rm-main">
+            <!-- REQUEST QUOTE -->
+            <section id="rm-request-quote">
+                <div class="offcanvas offcanvas-start" id="rm-request-quote-content">
+                    <button type="button" class="btn rm-request-quote-toggle"
+                        id="rm-request-quote-toggle"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#rm-request-quote-content">
+                        <span>Orçamento</span>
+                        <span class="badge rounded-pill" id="rm-request-products-qty"></span>
+                    </button>
+                
+                    <div class="offcanvas-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-xl-3 rm-request-content">
+                                    <div class="col-12 rm-request-title">
+                                        <h3 class="rm-title-2">Solicite o seu orçamento!</h3>
+                                        <p>
+                                            Adicione os produtos e/ou descreva os serviços na mensagem.
+                                        </p>
+                                    </div>
+                                    <div class="col-12 d-none mt-4" id="rm-request-products">
+                                        <div class="row rm-slide">
+                                            <div class="swiper rm-slide-container">
+                                                <div class="rm-slide-content">
+                                                    <div class="swiper-wrapper rm-request-products-internal"
+                                                        id="rm-request-products-wrapper">
+                                                    </div>
+                                                </div>
+                                    
+                                                <!-- Pagination -->
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-9 rm-request-form">
+                                    <form action="#" method="POST">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-4 mb-4 rm-request-form-field">
+                                                <label for="name" class="form-label">
+                                                    Nome
+                                                </label>
+                                                <input type="text" class="form-control"
+                                                    id="name"
+                                                    name="name">
+                                            </div>
+                                            <div class="col-12 col-lg-4 mb-4 rm-request-form-field">
+                                                <label for="email" class="form-label">
+                                                    Email
+                                                </label>
+                                                <input type="email" class="form-control"
+                                                    id="email"
+                                                    name="email">
+                                            </div>
+                                            <div class="col-12 col-lg-4 mb-4 rm-request-form-field">
+                                                <label for="phone" class="form-label">
+                                                    Telefone
+                                                </label>
+                                                <input type="phone" class="form-control"
+                                                    id="phone"
+                                                    name="phone"
+                                                    placeholder="(85) 9 9999-9999">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-lg-4 mb-4 rm-request-form-field">
+                                                <label for="company" class="form-label">
+                                                    Empresa
+                                                </label>
+                                                <input type="text" class="form-control"
+                                                    id="company"
+                                                    name="company">
+                                            </div>
+                                            <div class="col-12 col-lg-4 mb-4 rm-request-form-field">
+                                                <label for="position" class="form-label">
+                                                    Cargo
+                                                </label>
+                                                <input type="text" class="form-control"
+                                                    id="position"
+                                                    name="position">
+                                            </div>
+                                            <div class="col-12 col-lg-2 mb-4 rm-request-form-field">
+                                                <label for="state" class="form-label">
+                                                    Estado
+                                                </label>
+                                                <select class="form-select" id="state" name="state">
+                                                    <option value="" selected disabled>--</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="TO">TO</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 col-lg-2 mb-4 rm-request-form-field">
+                                                <label for="city" class="form-label">
+                                                    Cidade
+                                                </label>
+                                                <input type="text" class="form-control"
+                                                    id="city"
+                                                    name="city">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 mb-4 rm-request-form-field">
+                                                <label for="message" class="form-label">
+                                                    Mensagem
+                                                </label>
+                                                <textarea class="form-control"
+                                                    id="message"
+                                                    name="message"
+                                                    rows="4"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="rm-form-actions">
+                                            <button type="submit" class="btn rm-btn-secondary">
+                                                Enviar
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTRODUCTION -->
+            <section id="rm-predictive-intro" class="rm-services-internal-intro">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <h1 class="rm-title-1">Preditiva</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DESCRIPTION -->
+            <section class="rm-services-internal-description">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-7">
+                            <p>
+                                Uma ferramenta tecnológica que permite reduzir os custos referentes a manutenção através da otimização dos recursos existentes introduzindo o acompanhamento sistemático utilizando ferramentas de tecnologia de ponta como: Vibração, temperatura, Análise de óleo, Ruído, Termografia, etc.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row rm-services-gallery">
+                        <div class="col-12 col-lg-6 rm-services-gallery-item-1">
+                            <div class="row">
+                                <div class="col-6 rm-services-gallery-image-1">
+                                    <img src="../src/img/image-sm.jpg" alt="Imagem 1">
+                                </div>
+                                <div class="col-6 rm-services-gallery-image-2">
+                                    <img src="../src/img/image-sm.jpg" alt="Imagem 2">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 rm-services-gallery-image-3">
+                                    <img src="../src/img/image-sm.jpg" alt="Imagem 3">
+                                </div>
+                                <div class="col-6 rm-services-gallery-image-4">
+                                    <img src="../src/img/image-sm.jpg" alt="Imagem 4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 rm-services-gallery-item-2">
+                            <img src="../src/img/image-lg.jpg" alt="Imagem 6">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="rm-contact-internal">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-3">
+                            <h2 class="rm-title-1">
+                                Entre em contato conosco
+                            </h2>
+                            <p>
+                                Preencha os campos e em breve entraremos em contato com você.
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-9 col-xl-8 offset-xl-1">
+                            <form action="#" method="POST">
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <input type="text" class="form-control"
+                                            id="name"
+                                            name="name"
+                                            placeholder="Nome">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 col-sm-3 mb-4">
+                                        <select class="form-select" id="state" name="state" required>
+                                            <option value="" selected disabled>UF</option>
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AP">AP</option>
+                                            <option value="AM">AM</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>
+                                            <option value="DF">DF</option>
+                                            <option value="ES">ES</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MT">MT</option>
+                                            <option value="MG">MG</option>
+                                            <option value="PA">PA</option>
+                                            <option value="PB">PB</option>
+                                            <option value="PR">PR</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>
+                                            <option value="RJ">RJ</option>
+                                            <option value="RN">RN</option>
+                                            <option value="RS">RS</option>
+                                            <option value="RO">RO</option>
+                                            <option value="RR">RR</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SP">SP</option>
+                                            <option value="SE">SE</option>
+                                            <option value="TO">TO</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 col-sm-9 mb-4">
+                                        <input type="text" class="form-control"
+                                            id="city"
+                                            name="city"
+                                            placeholder="Cidade">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <input type="text" class="form-control"
+                                            id="email"
+                                            name="email"
+                                            placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <input type="text" class="form-control"
+                                            id="phone"
+                                            name="phone"
+                                            placeholder="Telefone">
+                                    </div>
+                                </div>
+                                <div class="rm-form-actions">
+                                    <button type="submit" class="btn rm-btn-primary">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer id="rm-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-4 rm-footer-column-1">
+                        <ul class="rm-footer-communication">
+                            <li>
+                                <img src="../src/img/icons/place-icon.svg" alt="Ícone de localização">
+                                <span>
+                                    Rua do Veiga, 362, Santo Amaro, PE
+                                </span>
+                            </li>
+                            <li>
+                                <img src="../src/img/icons/phone-icon.svg" alt="Ícone de telefone">
+                                <span>
+                                    Fone/Fax: (81) 3413 5757
+                                </span>
+                            </li>
+                            <li>
+                                <img src="../src/img/icons/email-icon.svg" alt="Ícone de email">
+                                <span>
+                                    <a href="mailto:rolimec@rolimec.com.br" target="_blank">
+                                        rolimec@rolimec.com.br
+                                    </a>
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="rm-footer-communication">
+                            <li>
+                                <img src="../src/img/icons/place-icon.svg" alt="Ícone de localização">
+                                <span>
+                                    Rua André L. R da Fonte, 413, Galpão 7 – Pitangueiras, BA
+                                </span>
+                            </li>
+                            <li>
+                                <img src="../src/img/icons/phone-icon.svg" alt="Ícone de telefone">
+                                <span>
+                                    Fone/Fax: (71) 3289 6900
+                                </span>
+                            </li>
+                            <li>
+                                <img src="../src/img/icons/email-icon.svg" alt="Ícone de email">
+                                <span>
+                                    <a href="mailto:rolimecba@rolimec.com.br" target="_blank">
+                                        rolimecba@rolimec.com.br
+                                    </a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 rm-footer-links rm-footer-column-2">
+                        <h4 class="rm-title-4">Nossos Serviços</h4>
+                        <ul>
+                            <li>
+                                <a href="preditiva.html">
+                                    Preditiva
+                                </a>
+                            </li>
+                            <li>
+                                <a href="alinhamento-a-laser-de-eixos-e-polias.html">
+                                    Alinhamento a laser de eixos e polias
+                                </a>
+                            </li>
+                            <li>
+                                <a href="analise-de-oleo-lubrificante-e-isolante.html">
+                                    Análise de óleo lubrificante e isolante
+                                </a>
+                            </li>
+                            <li>
+                                <a href="termografia.html">
+                                    Termografia
+                                </a>
+                            </li>
+                            <li>
+                                <a href="analise-de-vibracoes.html">
+                                    Análise de vibrações 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="balanceamento-de-campo.html">
+                                    Balanceamento de campo
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-5 col-lg-2 offset-1 rm-footer-links rm-footer-column-3">
+                        <h4 class="rm-title-4">Home</h4>
+                        <ul>
+                            <li>
+                                <a href="../a-empresa.html">
+                                    A empresa
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../produtos.html">
+                                    Produtos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../parceiros.html">
+                                    Parceiros
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../contato.html">
+                                    Contato
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2 rm-footer-links rm-footer-column-4">
+                        <h4 class="rm-title-4">Catálogos</h4>
+                        <ul>
+                            <li>
+                                <a href="../produtos.html"
+                                    onclick="return window.setProductCatalog(this)"
+                                    data-products-catalog="rm-products-skf">
+                                    Skf
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../produtos.html"
+                                    onclick="return window.setProductCatalog(this)"
+                                    data-products-catalog="rm-products-gates">
+                                    Gates
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../produtos.html"
+                                    onclick="return window.setProductCatalog(this)"
+                                    data-products-catalog="rm-products-sabo">
+                                    Sabo
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-3 rm-footer-column-5">
+                        <div class="rm-footer-logo-container">
+                            <img src="../src/img/logo-footer.svg" alt="Logo da Rolimec">
+                        </div>
+                        <div class="rm-footer-social-media">
+                            <p>Redes sociais</p>
+                            <ul class="rm-footer-social-media-icons">
+                                <li class="rm-footer-instagram rm-social-media-icon">
+                                    <a href="https://www.instagram.com/rolimecindustrial/"
+                                        target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45">
+                                            <g data-name="Icon Instagram">
+                                                <g fill="#00d8ff" data-name="Grupo 1" class="rm-footer-instagram-bg">
+                                                    <path d="M31.43 15.7a3.815 3.815 0 0 0-2.18-2.18 6.436 6.436 0 0 0-2.13-.4c-1.21-.06-1.57-.07-4.64-.07s-3.43.01-4.64.07a6.179 6.179 0 0 0-2.13.4 3.638 3.638 0 0 0-1.32.86 3.555 3.555 0 0 0-.86 1.32 6.436 6.436 0 0 0-.4 2.13c-.05 1.21-.06 1.57-.06 4.64s.01 3.43.06 4.64a6.179 6.179 0 0 0 .4 2.13 3.815 3.815 0 0 0 2.18 2.18 6.561 6.561 0 0 0 2.13.4c1.21.06 1.57.07 4.64.07s3.43-.01 4.64-.07a6.179 6.179 0 0 0 2.13-.4 3.815 3.815 0 0 0 2.18-2.18 6.436 6.436 0 0 0 .4-2.13c.06-1.21.07-1.57.07-4.64s-.01-3.43-.07-4.64a6.179 6.179 0 0 0-.4-2.13Zm-8.95 12.67a5.9 5.9 0 1 1 5.9-5.9 5.9 5.9 0 0 1-5.9 5.9Zm6.13-10.65a1.38 1.38 0 1 1 1.38-1.38 1.376 1.376 0 0 1-1.38 1.38Z" data-name="Caminho 22"/>
+                                                    <path d="M22.48 18.64a3.83 3.83 0 1 0 3.83 3.83 3.824 3.824 0 0 0-3.83-3.83Z" data-name="Caminho 23"/>
+                                                    <path d="M44.89 20.28a22.9 22.9 0 0 0-.32-2.18 19.706 19.706 0 0 0-.54-2.14 21.389 21.389 0 0 0-.74-2.08c-.28-.68-.6-1.35-.94-2a20.163 20.163 0 0 0-1.14-1.89q-.615-.915-1.32-1.77c-.47-.57-.96-1.12-1.48-1.64a20.858 20.858 0 0 0-1.64-1.48q-.855-.71-1.77-1.32a20.068 20.068 0 0 0-1.89-1.13A22.65 22.65 0 0 0 29.03.97c-.71-.21-1.42-.39-2.14-.54S25.44.18 24.71.11 23.24 0 22.5 0s-1.47.04-2.21.11-1.46.18-2.18.32a19.706 19.706 0 0 0-2.14.54 21.39 21.39 0 0 0-2.08.74c-.68.28-1.35.6-2 .94s-1.28.73-1.89 1.13-1.2.85-1.77 1.32-1.11.96-1.64 1.48a19.049 19.049 0 0 0-1.48 1.64q-.71.855-1.32 1.77t-1.14 1.89a20.271 20.271 0 0 0-.94 2 21.39 21.39 0 0 0-.74 2.08c-.21.71-.39 1.42-.54 2.14a20.092 20.092 0 0 0-.32 2.18c-.07.73-.11 1.47-.11 2.21s.04 1.47.11 2.21.18 1.46.32 2.18a19.706 19.706 0 0 0 .54 2.14c.22.7.46 1.4.74 2.08s.6 1.35.94 2 .73 1.28 1.14 1.89.85 1.2 1.32 1.77.96 1.12 1.48 1.64a20.858 20.858 0 0 0 1.64 1.48q.855.705 1.77 1.32a20.067 20.067 0 0 0 1.89 1.13 22.651 22.651 0 0 0 4.08 1.68c.71.21 1.42.39 2.14.54s1.45.25 2.18.32 1.47.11 2.21.11 1.47-.04 2.21-.11 1.46-.18 2.18-.32a19.706 19.706 0 0 0 2.14-.54 21.389 21.389 0 0 0 2.08-.74c.68-.28 1.35-.6 2-.94s1.28-.73 1.89-1.13 1.2-.85 1.77-1.32 1.11-.96 1.64-1.48a19.049 19.049 0 0 0 1.48-1.64q.705-.855 1.32-1.77t1.14-1.89a20.27 20.27 0 0 0 .94-2 21.391 21.391 0 0 0 .74-2.08c.21-.71.39-1.42.54-2.14a20.091 20.091 0 0 0 .32-2.18c.07-.73.11-1.47.11-2.21s-.04-1.47-.11-2.21Zm-11 6.92a8.2 8.2 0 0 1-.54 2.79 5.592 5.592 0 0 1-1.32 2.03A5.756 5.756 0 0 1 30 33.35a8.417 8.417 0 0 1-2.79.53c-1.23.06-1.62.07-4.74.07s-3.51-.01-4.74-.07a8.417 8.417 0 0 1-2.79-.53 5.494 5.494 0 0 1-2.03-1.33 5.756 5.756 0 0 1-1.33-2.03 8.364 8.364 0 0 1-.53-2.79c-.06-1.23-.07-1.62-.07-4.74s.01-3.51.07-4.74a8.471 8.471 0 0 1 .53-2.79 5.494 5.494 0 0 1 1.33-2.03 5.756 5.756 0 0 1 2.03-1.33 8.417 8.417 0 0 1 2.79-.53c1.23-.06 1.62-.07 4.74-.07s3.51.01 4.74.07a8.471 8.471 0 0 1 2.79.53 5.494 5.494 0 0 1 2.03 1.33 5.592 5.592 0 0 1 1.32 2.03 8.39 8.39 0 0 1 .54 2.79c.06 1.23.07 1.62.07 4.74s-.01 3.51-.07 4.74Z"
+                                                        data-name="Caminho 24"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="rm-footer-facebook rm-social-media-icon">
+                                    <a href="https://www.facebook.com/Rolimec/" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45">
+                                            <g data-name="Icon Facebook">
+                                                <path fill="#00d8ff" d="M44.89 20.28a22.9 22.9 0 0 0-.32-2.18 19.706 19.706 0 0 0-.54-2.14 21.389 21.389 0 0 0-.74-2.08c-.28-.68-.6-1.35-.94-2s-.73-1.28-1.14-1.89-.85-1.2-1.32-1.77-.96-1.12-1.48-1.64a20.858 20.858 0 0 0-1.64-1.48q-.855-.71-1.77-1.32a20.068 20.068 0 0 0-1.89-1.13A22.65 22.65 0 0 0 29.03.97c-.71-.21-1.42-.39-2.14-.54S25.44.18 24.71.11 23.24 0 22.5 0s-1.47.04-2.21.11-1.46.18-2.18.32a19.706 19.706 0 0 0-2.14.54c-.7.22-1.4.46-2.08.74s-1.35.6-2 .94-1.28.73-1.89 1.13-1.2.85-1.77 1.32-1.11.96-1.64 1.48a20.858 20.858 0 0 0-1.48 1.64q-.71.855-1.32 1.77t-1.14 1.89a20.271 20.271 0 0 0-.94 2 21.39 21.39 0 0 0-.74 2.08c-.21.71-.39 1.42-.54 2.14s-.25 1.45-.32 2.18S0 21.75 0 22.49s.04 1.47.11 2.21.18 1.46.32 2.18a19.706 19.706 0 0 0 .54 2.14c.22.7.46 1.4.74 2.08s.6 1.35.94 2a20.163 20.163 0 0 0 1.14 1.89q.615.915 1.32 1.77c.47.57.96 1.12 1.48 1.64a20.858 20.858 0 0 0 1.64 1.48q.855.705 1.77 1.32a20.067 20.067 0 0 0 1.89 1.13 22.651 22.651 0 0 0 4.08 1.68c.71.21 1.42.39 2.14.54s1.45.25 2.18.32 1.47.11 2.21.11 1.47-.04 2.21-.11 1.46-.18 2.18-.32a19.706 19.706 0 0 0 2.14-.54c.7-.22 1.4-.46 2.08-.74s1.35-.6 2-.94 1.28-.73 1.89-1.13 1.2-.85 1.77-1.32 1.11-.96 1.64-1.48a20.858 20.858 0 0 0 1.48-1.64q.705-.855 1.32-1.77t1.14-1.89a20.271 20.271 0 0 0 .94-2 21.391 21.391 0 0 0 .74-2.08c.21-.71.39-1.42.54-2.14a20.091 20.091 0 0 0 .32-2.18c.07-.73.11-1.47.11-2.21s-.04-1.47-.11-2.21Zm-17.35-4.67h-2.25c-.8 0-.96.33-.96 1.15v1.99h3.21l-.31 3.49h-2.91v10.43h-4.16V22.29h-2.17v-3.54h2.17v-2.78c0-2.61 1.4-3.98 4.49-3.98h2.88v3.62Z" data-name="Caminho 20" class="rm-footer-facebook-bg" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="rm-footer-x">
+                                    <a href="https://twitter.com/Rolimec/" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45">
+                                            <g data-name="Grupo 8383" transform="translate(-1192 -5076)">
+                                              <circle cx="22.5" cy="22.5" r="22.5" fill="#00d8ff" data-name="Elipse 247" transform="translate(1192 5076)" class="rm-footer-x-bg"/>
+                                              <path fill="#0171b6" d="M1221.113 5089h3.527l-7.7 8.472L1226 5109h-7.1l-5.559-6.993-6.358 6.993h-3.529l8.246-9.062L1203 5089h7.278l5.022 6.39 5.814-6.39Zm-1.237 17.97h1.955l-12.617-16.046h-2.1l12.762 16.046Z" class="rm-social-media-icon"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="rm-footer-linkedin rm-social-media-icon">
+                                    <a href="https://www.linkedin.com/company/rolimecsolucoesindustriais/?originalSubdomain=br" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+                                            data-name="Icon Linkedin">
+                                            <path fill="#00d8ff" d="M0 24.077v-3.164c.1-.708.165-1.419.29-2.121A22.32 22.32 0 0 1 7.3 5.9 21.991 21.991 0 0 1 18.617.339c.76-.131 1.527-.227 2.29-.339h3.163c.723.1 1.449.167 2.166.3a22 22 0 0 1 14.018 8.422 21.848 21.848 0 0 1 4.138 18.835A21.548 21.548 0 0 1 36.3 40.241a21.982 21.982 0 0 1-17.5 4.447 21.7 21.7 0 0 1-11.5-5.6A22.115 22.115 0 0 1 .353 26.456C.21 25.668.116 24.87 0 24.078Zm19.072-5.52V34.3H23.9v-.5c0-2.328-.006-4.656 0-6.984 0-.555.032-1.112.088-1.663A2.757 2.757 0 0 1 27.45 22.5a1.953 1.953 0 0 1 1.688 1.519 8.466 8.466 0 0 1 .275 2.031c.032 2.591.013 5.183.014 7.775v.486c.183.009.311.021.44.021 1.332 0 2.664-.012 4 .009.371.006.465-.112.462-.471-.014-2.694.013-5.388-.019-8.082a21.914 21.914 0 0 0-.234-3.1c-.32-2.061-1.278-3.679-3.436-4.257a8.487 8.487 0 0 0-2.121-.274 5.1 5.1 0 0 0-4.617 2.37 2.219 2.219 0 0 1-.187.2v-2.169h-4.644Zm-7.994 15.736h4.813V18.566h-4.813v15.727Zm2.408-17.943a2.843 2.843 0 1 0-2.856-2.833 2.87 2.87 0 0 0 2.856 2.833Z" data-name="Caminho 32" class="rm-footer-linkedin-bg" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                            <span>/rolimecindustrial</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row rm-copyright-container">
+                    <div class="col-6">
+                        <p>
+                            &copy; Rolimec <span id="rm-footer-year"></span>
+                        </p>
+                    </div>
+                    <div class="col-6 rm-copyright-logo">
+                        <a href="https://www.agenciacaju.com.br" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20.058" height="28.142" data-name="Layer 1">
+                                <g fill="#fff" data-name="Grupo 1" class="rm-copyright-logo-path">
+                                    <path d="m13.371 18.113-3.344-3.343-3.343 3.343 3.343 3.343L6.684 24.8l3.343 3.343 3.344-3.343 3.343-3.344Z" data-name="Caminho 5" />
+                                    <path d="m20.058 10.028-3.343-3.342-3.344-3.343L10.029 0 6.686 3.343 3.344 6.686 0 10.028l3.344 3.344L0 16.714l3.344 3.344 3.343-3.344 3.343-3.343 3.343 3.343 3.344 3.344 3.343-3.344-3.343-3.343Z" data-name="Caminho 6"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../src/js/plugins/bootstrap.bundle.min.js"></script>
+        <script src="../src/js/plugins/swiper-bundle.min.js"></script>
+        <script type="module" src="../src/js/main.js"></script>
+    </body>
+</html>

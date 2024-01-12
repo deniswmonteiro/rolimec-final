@@ -1,0 +1,40 @@
+#rm-home-products.rm-home-products {
+    padding-bottom: 130px;
+}
+
+#rm-products.rm-home-products .rm-product-content img {
+    width: 100%;
+}
+
+#rm-products.rm-home-products .rm-products-action {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 991px) {
+    #rm-products.rm-home-products {
+        padding-bottom: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    /** SEARCH */
+    #rm-products.rm-home-products #rm-products-form-search input {
+        width: 225px;
+    }
+
+    #rm-products.rm-home-products #rm-products-form-search input:focus {
+        width: 280px;
+    }
+}
+
+@media (max-width: 539px) {
+    /** SEARCH */
+    #rm-products.rm-home-products #rm-products-form-search input {
+        width: 152px;
+    }
+
+    #rm-products.rm-home-products #rm-products-form-search input:focus {
+        width: 240px;
+    }
+}

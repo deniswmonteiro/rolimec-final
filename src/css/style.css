@@ -1,0 +1,64 @@
+@import url("./fonts.css");
+@import url("./variables.css");
+@import url("./reset.css");
+@import url("./general.css");
+@import url("./header.css");
+
+@import url("./request-quote.css");
+@import url("./contact-internal.css");
+@import url("./services-internal.css");
+
+/** HOME */
+@import url("./home-introduction.css");
+@import url("./home-description.css");
+@import url("./home-services.css");
+@import url("./home-featured-products.css");
+@import url("./home-partners.css");
+@import url("./home-products.css");
+
+/** COMPANY */
+@import url("./company-introduction.css");
+@import url("./company.css");
+@import url("./company-certifications.css");
+
+/** SERVICES */
+/** Predictive */
+@import url("./services/predictive-introduction.css");
+
+/** Alignment */
+@import url("./services/alignment-introduction.css");
+
+/** Oil Analysis */
+@import url("./services/oil-analysis-introduction.css");
+
+/** Termography */
+@import url("./services/termography-introduction.css");
+
+/** Vibration Analysis */
+@import url("./services/vibration-analysis-introduction.css");
+
+/** Field Balancing */
+@import url("./services/field-balancing-introduction.css");
+
+/** PRODUCTS */
+@import url("./products.css");
+
+/** PRODUCT */
+@import url("./product.css");
+
+/** PARTNERS */
+@import url("./partners.css");
+
+/** CONTACT */
+@import url("./contact.css");
+
+/** NOT FOUND */
+@import url("./not-found.css");
+
+/** MAINTENANCE */
+@import url("./maintenance.css");
+
+/** REQUEST QUOTE SUCCESS */
+@import url("./request-quote-success.css");
+
+@import url("./footer.css");

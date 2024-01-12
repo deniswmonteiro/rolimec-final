@@ -1,0 +1,27 @@
+/** VARIABLES */
+* {
+    /** Fonts */
+    --font-thin: "Archivo Thin", sans-serif;
+    --font-regular: "Archivo Regular", sans-serif;
+    --font-medium: "Archivo Medium", sans-serif;
+    --font-semibold: "Archivo SemiBold", sans-serif;
+    --font-bold: "Archivo Bold", sans-serif;
+    --font-extrabold: "Archivo ExtraBold", sans-serif;
+
+    /** Colors */
+    --blue-1: #00D8FE;
+    --blue-2: #0071E7;
+    --blue-3: #0071B6;
+    --blue-4: #0C34C7;
+    --blue-5: #1B3E8F;
+    --red: #F06;
+    --gray-1: #E6E6E6;
+    --gray-2: #AAA;
+    --gray-3: #777;
+    --black: #323232;
+    --white: #FFF;
+    --instagram: #E4405F;
+    --facebook: #0766FF;
+    --x: #000;
+    --linkedin: #0B66C2;
+}

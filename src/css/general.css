@@ -1,0 +1,238 @@
+#rm-app {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh + 130px);
+    position: relative;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+#rm-app.rm-not-found,
+#rm-app.rm-request-quote-header {
+    min-height: 100vh;
+}
+
+#rm-main {
+    flex: 1;
+}
+
+.container > .row {
+    padding-left: 48px !important;
+    padding-right: 16px !important;
+}
+
+/** ALERT */
+.rm-alert-cart {
+    position: sticky;
+    width: 100%;
+    margin: 0 auto;
+    display: none;
+    text-align: center;
+    font-family: var(--font-semibold);
+    background-color: var(--blue-1);
+    color: var(--black);
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    z-index: 1000;
+}
+
+/** TITLES */
+.rm-title-1 {
+    font-family: var(--font-bold);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.rm-title-2 {
+    font-family: var(--font-semibold);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.rm-title-3 {
+    font-family: var(--font-bold);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.rm-title-4 {
+    font-family: var(--font-regular);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/** SECTIONS TITLE */
+.rm-title-container h1,
+.rm-title-container h2 {
+    margin-bottom: 30px;
+}
+
+.rm-title-container h1::before,
+.rm-title-container h2::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 9px;
+    border-radius: 7px;
+    background-color: var(--blue-1);
+    margin-bottom: 15px;
+}
+
+.rm-title-container h1 span,
+.rm-title-container h2 span {
+    color: var(--blue-1);
+}
+
+/** FORM */
+input.form-control,
+textarea.form-control,
+select.form-select {
+    padding: 8px 12px;
+    color: var(--black);
+	border-radius: 12px;
+    transition: .3s;
+}
+
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-select:focus {
+    box-shadow: none;
+    border-color: var(--black);
+    transition: .3s;
+}
+
+input.form-control::placeholder,
+select:invalid {
+    color: var(--gray-2);
+}
+
+/** BUTTONS */
+.rm-btn-primary,
+.rm-btn-secondary {
+    font-family: var(--font-semibold);
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    border: none;
+    transition: .3s;
+}
+
+.rm-btn-primary {
+    background-color: var(--blue-3);
+    color: var(--blue-1);
+}
+
+.rm-btn-primary:hover,
+.rm-btn-primary:focus,
+.rm-btn-primary:focus-visible,
+.rm-btn-primary:active {
+    background-color: var(--blue-1) !important;
+    color: var(--blue-3) !important;
+    transition: .3s;
+}
+
+.rm-btn-secondary {
+    background-color: var(--blue-1);
+    color: var(--blue-3);
+}
+
+.rm-btn-secondary:hover,
+.rm-btn-secondary:focus,
+.rm-btn-secondary:focus-visible,
+.rm-btn-secondary:active {
+    background-color: var(--black) !important;
+    color: var(--blue-1) !important;
+    transition: .3s;
+}
+
+.rm-btn-primary:disabled,
+.rm-btn-secondary:disabled {
+    background-color: var(--gray-1);
+    color: var(--white);
+    cursor: not-allowed;
+    transition: .3s;
+}
+
+/** BOOSTSTRAP */
+.dropdown-toggle::after {
+    display: none;
+}
+
+/** SWIPER */
+.swiper-pagination-lock {
+    display: block;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--blue-3);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--blue-3);
+    border: 2px solid var(--blue-1);
+}
+
+@media (max-width: 991px) {
+    .container > .row {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    /** TITLES */
+    .rm-title-1 {
+        font-size: 20px;
+    }
+
+    .rm-title-2 {
+        font-size: 16px;
+    }
+
+    /** SECTIONS TITLE */
+    .rm-title-container h1,
+    .rm-title-container h2 {
+        margin-bottom: 20px;
+    }
+
+    .rm-title-container h1::before,
+    .rm-title-container h2::before {
+        width: 28px;
+        height: 7px;
+        margin-bottom: 10px;
+    }
+
+    /** BUTTONS */
+    .rm-btn-primary,
+    .rm-btn-secondary {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .container  > .row {
+        padding-left: 32px !important;
+        padding-right: 16px !important;
+    }
+
+    /** BUTTONS */
+    .rm-btn-primary,
+    .rm-btn-secondary {
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,39 @@
+#rm-request-quote-success {
+    padding-top: 30vh;
+    text-align: center;
+}
+
+#rm-request-quote-success img {
+    margin: 0 auto 40px auto;
+    width: 90px;
+    height: 90px;
+}
+
+#rm-request-quote-success h1 {
+    color: var(--black);
+    width: 645px;
+    margin: 0 auto 40px auto;
+}
+
+@media (max-width: 991px) {
+    #rm-request-quote-success img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 30px;
+    }
+
+    #rm-request-quote-success h1 {
+        width: 310px;
+        margin-bottom: 30px;
+    }
+
+    #rm-request-quote-success a {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    #rm-request-quote-success h1 {
+        width: 280px;
+    }
+}

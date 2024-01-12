@@ -1,0 +1,32 @@
+#rm-maintenance {
+    padding-top: 30vh;
+    text-align: center;
+}
+
+#rm-maintenance img {
+    margin: 0 auto 40px auto;
+    width: 259px;
+    height: 73px;
+}
+
+#rm-maintenance h1 {
+    margin-bottom: 16px;
+    color: var(--black);
+}
+
+#rm-maintenance p {
+    font-size: 20px;
+    color: var(--black);
+}
+
+@media (max-width: 991px) {
+    #rm-maintenance img {
+        width: 177px;
+        height: 50px;
+        margin-bottom: 40px;
+    }
+
+    #rm-maintenance p {
+        font-size: 16px;
+    }
+}

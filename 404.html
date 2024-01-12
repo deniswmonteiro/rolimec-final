@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rolimec | Página Não Encontrada</title>
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./src/css/plugins/bootstrap.min.css">
+        <link rel="stylesheet" href="./src/css/plugins/swiper-bundle.min.css">
+        <link rel="stylesheet" href="./src/css/style.css">
+    </head>
+    <body id="rm-app" class="rm-not-found">
+        <!-- HEADER -->
+        <header id="rm-header" class="rm-not-found-header">
+            <nav class="container navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand rm-header-logo" href="/">
+                        <img src="./src/img/logo.svg" alt="Logo da Rolimec">
+                    </a>
+
+                    <div class="rm-header-menu-container">
+                        <button type="button"
+                            id="rm-button-mobile"
+                            aria-controls="rm-header-menu" 
+                            aria-expanded="false"
+                            aria-label="Toggle menu mobile"
+                            onclick="return event.preventDefault(), window.toggleMenuMobile(this)">
+                            <span id="rm-icon-hamburger"></span>
+                        </button>
+                    
+                        <ul class="navbar-nav mr-auto mb-2 mb-lg-0 rm-header-menu"
+                            id="rm-header-menu">
+                            <li class="nav-item">
+                                <a href="a-empresa.html" class="nav-link">
+                                    A empresa
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Serviços
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="./servicos/preditiva.html">
+                                                    Preditiva
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="./servicos/termografia.html">
+                                                    Termografia
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="./servicos/alinhamento-a-laser-de-eixos-e-polias.html">
+                                                    Alinhamento a laser de eixos e polias
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="./servicos/analise-de-vibracoes.html">
+                                                    Análise de vibrações
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="./servicos/analise-de-oleo-lubrificante-e-isolante.html">
+                                                    Análise de óleo lubrificante e isolante
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="./servicos/balanceamento-de-campo.html">
+                                                    Balanceamento de campo
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="produtos.html" class="nav-link">
+                                    Produtos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="parceiros.html" class="nav-link">
+                                    Parceiros
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contato.html" class="nav-link">
+                                    Contato
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="rm-main">
+            <!-- NOT FOUND -->
+            <section id="rm-not-found">
+                <div class="container">
+                    <span class="rm-not-found-text">Ops!</span>
+                    <h1 class="rm-title-1">
+                        4<img src="./src/img/icons/rolimec-icon.svg" alt="Ícone da Rolimec"><span>4 Página não encontrada!</span>
+                    </h1>
+                    <p>Desculpe, página não encontrada, não existe ou foi removida!</p>
+                    <div class="rm-not-found-actions">
+                        <a href="/" class="btn rm-btn-primary">
+                            Voltar para o início
+                        </a>
+                        <a href="contato.html" class="btn rm-btn-secondary">
+                            Fale conosco
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="./src/js/plugins/bootstrap.bundle.min.js"></script>
+        <script src="./src/js/plugins/swiper-bundle.min.js"></script>
+        <script type="module" src="./src/js/main.js"></script>
+    </body>
+</html>

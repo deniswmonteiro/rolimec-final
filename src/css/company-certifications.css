@@ -1,0 +1,40 @@
+#rm-company-certifications {
+    padding-bottom: 130px;
+}
+
+#rm-company-certifications .rm-company-certifications-content {
+    background-color: var(--gray-1);
+    padding: 40px 70px 17px 70px;
+    border-radius: 8px;
+    min-height: 100%;
+}
+
+#rm-company-certifications .rm-company-certifications-content h2 {
+    margin-bottom: 15px;
+}
+
+#rm-company-certifications .rm-company-certifications-content p {
+    color: var(--black);
+    line-height: 1.4;
+    margin-bottom: 23px;
+}
+
+@media (max-width: 991px) {
+    #rm-company-certifications {
+        padding-bottom: 80px;
+    }
+
+    #rm-company-certifications .rm-company-certifications-content {
+        padding: 30px 20px 11px 20px;
+    }
+
+    #rm-company-certifications .rm-company-certifications-content:first-of-type {
+        margin-bottom: 30px;
+        min-height: initial;
+    }
+
+    #rm-company-certifications .rm-company-certifications-content p {
+        font-size: 14px;
+        margin-bottom: 19px;
+    }
+}
