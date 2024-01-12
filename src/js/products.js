@@ -1,5 +1,5 @@
-import { getRequestQuoteItemsQuantity } from "./general";
-import { addRequestQuoteItemsSlide } from "./request-quote-items";
+import { getRequestQuoteItemsQuantity } from "../../src/js/general.js";
+import { addRequestQuoteItemsSlide } from "../../src/js/request-quote-items.js";
 
 /** Enable button to add product to cart when the quantity is changed */
 window.enableBtnAddProductToCart = (el) => {
