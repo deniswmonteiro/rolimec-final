@@ -1,4 +1,4 @@
-import { getRequestQuoteItemsQuantity } from "./general";
+import { getRequestQuoteItemsQuantity } from "../../src/js/general.js";
 
 /** Swiper */
 export function initRequestQuoteItemsSlide() {
