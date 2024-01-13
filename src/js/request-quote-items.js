@@ -36,8 +36,7 @@ export function addRequestQuoteItemsSlide(data) {
     requestQuoteProducts.classList.remove("d-none");
     
     initRequestQuoteItemsSlide();
-
-    const wrapper = document.querySelector("#rm-request-products-wrapper");
+    
     const swiper = document.querySelector("#rm-request-products .rm-slide-content").swiper;
     const slideIndex = swiper.slides.length + 1;
     const slideNameImage = data.name.toLowerCase()

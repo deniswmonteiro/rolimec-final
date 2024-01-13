@@ -36,8 +36,8 @@ export function getRequestQuoteItems() {
                     .replaceAll(" ", "-");
 
                 const imgSrc = wrapper.classList.contains("rm-request-products-internal") ? 
-                    `../../src/img/products/${itemNameImage}-md.jpg` : 
-                    `../src/img/products/${itemNameImage}-md.jpg`;
+                    `../src/img/products/${itemNameImage}-md.jpg` : 
+                    `./src/img/products/${itemNameImage}-md.jpg`;
 
                 wrapper.insertAdjacentHTML("beforeend", `
                     <article class="swiper-slide rm-slide-article" id="rm-request-item-${index + 1}">
