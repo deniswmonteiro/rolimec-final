@@ -45,7 +45,7 @@ export function addRequestQuoteItemsSlide(data) {
         .replace(/[\u0300-\u036f]/g, "")
         .replaceAll(" ", "-");
     const productType = data.type.toLowerCase();
-    const imgSrc = `../../../src/img/${productType}/${slideNameImage}-md.jpg`;
+    const imgSrc = `../../../../src/img/${productType}/${slideNameImage}-md.jpg`;
     const cartItems = getLocalStorage("Rolimec");
 
     if (cartItems) {
